@@ -137,7 +137,7 @@ class NetHandler
     
     class func login(username:String, password:String) -> Response
     {
-        if let response = sendData(str: "AUTH," + username + "," + password)
+        if let response = sendData(str: compileMsg(msg: "AUTH", username, password))
         {
             let split = Utilities.split(s: response, separator: SharedData.SPLITTER)
             
@@ -156,7 +156,7 @@ class NetHandler
     
     class func register(username:String, password:String) -> Response
     {
-        if let response = sendData(str: "REGISTER," + username + "," + password)
+        if let response = sendData(str: compileMsg(msg: "REGISTER", username, password))
         {
             let split = Utilities.split(s: response, separator: SharedData.SPLITTER)
             
@@ -175,7 +175,7 @@ class NetHandler
     
     class func addEvent(entry:EventEntry) -> Response
     {
-        if let response = sendData(str: "ADDEVENT," + entry.toCSV())
+        if let response = sendData(str: compileMsg(msg: "NEWENTRY", entry.toCSV()))
         {
             let split = Utilities.split(s: response, separator: SharedData.SPLITTER)
             return split[0] == "ACCEPT" ? Response.ACCEPT : Response(accept: false, message: split[1])
@@ -186,7 +186,7 @@ class NetHandler
     
     class func editEvent(origName:String, entry:EventEntry) -> Response
     {
-        if let response = sendData(str: "EDITEVENT," + origName + "," + entry.toCSV())
+        if let response = sendData(str: compileMsg(msg: "EDITENTRY", origName, entry.toCSV()))
         {
             let split = Utilities.split(s: response, separator: SharedData.SPLITTER)
             return split[0] == "ACCEPT" ? Response.ACCEPT : Response(accept: false, message: split[1])

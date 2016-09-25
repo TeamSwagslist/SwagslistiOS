@@ -13,6 +13,7 @@ class EditEntryController : UIViewController
 {
     let isNew = true
     
+    @IBOutlet weak var premiumControl: UISegmentedControl!
     @IBOutlet weak var eventNameField: UITextField!
     @IBOutlet weak var descriptionField: UITextView!
     @IBOutlet weak var apparelSwitch: UISwitch!
@@ -26,6 +27,8 @@ class EditEntryController : UIViewController
         let eventEntry = EventEntry()
         eventEntry.name = eventNameField.text
         eventEntry.description = descriptionField.text
+        eventEntry.premium = premiumControl.selectedSegmentIndex == 1
+        eventEntry.ownerUsername = SharedData.sessionUsername
         
         if apparelSwitch.isOn
         {
@@ -39,6 +42,11 @@ class EditEntryController : UIViewController
         {
             eventEntry.swagSet.append("TRINKETS")
         }
+        
+        eventEntry.latitude = mapView.centerCoordinate.latitude
+        eventEntry.longitude = mapView.centerCoordinate.longitude
+        
+        eventEntry.endTime = UInt64(timePicker.date.timeIntervalSince1970*1000)
         
         let response = NetHandler.addEvent(entry: eventEntry)
         

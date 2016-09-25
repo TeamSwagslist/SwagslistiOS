@@ -16,7 +16,7 @@ class EventEntry
     var premium: Bool!
     var latitude: Double!
     var longitude: Double!
-    var startTime: UInt64!
+    var startTime: UInt64! = 0
     var endTime: UInt64!
     
     var swagSet = [String]()
@@ -66,7 +66,7 @@ class EventEntry
         
         for i in 0..<swagSet.count
         {
-            ret = ret + swagSet[i] + (i < swagSet.count-1 ? "," : "")
+            ret = ret + swagSet[i] + (i < swagSet.count-1 ? SharedData.SPLITTER_2 : "")
         }
         
         return ret

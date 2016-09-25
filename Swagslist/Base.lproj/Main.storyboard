@@ -20,7 +20,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DsY-EG-a8f">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DsY-EG-a8f">
                                 <color key="backgroundColor" red="0.17962334897369114" green="0.45549424149177525" blue="0.57229598445595853" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="9pj-X7-wkN"/>
@@ -34,7 +34,7 @@
                                     <action selector="loginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wnw-QZ-64o"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K9X-Wn-7Ju">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K9X-Wn-7Ju">
                                 <color key="backgroundColor" red="0.17962334899999999" green="0.45549424150000001" blue="0.57229598449999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="MtE-ge-m8L"/>
@@ -54,14 +54,14 @@
                                     <constraint firstAttribute="width" secondItem="Chl-ul-OND" secondAttribute="height" multiplier="15:7" id="itv-NK-hca"/>
                                 </constraints>
                             </imageView>
-                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="87G-h6-nFL">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="87G-h6-nFL">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="mzo-5f-bwB"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                             </textField>
-                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nuf-I3-PMz">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nuf-I3-PMz">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="cbj-yb-33O"/>
                                 </constraints>
@@ -257,6 +257,7 @@
                         <outlet property="eventNameField" destination="0lR-0d-Jgt" id="TQs-iR-1Gz"/>
                         <outlet property="foodSwitch" destination="It6-eu-GNr" id="W4X-GY-TOI"/>
                         <outlet property="mapView" destination="Nca-uT-NSz" id="2a6-8k-UTn"/>
+                        <outlet property="premiumControl" destination="Wj0-J3-Vdo" id="cPH-rs-gWF"/>
                         <outlet property="timePicker" destination="RSe-PU-9Ok" id="FEE-TM-u7h"/>
                         <outlet property="trinketsSwitch" destination="kUY-aK-unt" id="Wb2-Mo-JBB"/>
                     </connections>
