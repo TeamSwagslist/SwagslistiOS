@@ -56,7 +56,6 @@ class EventEntry
         str.append(SharedData.SPLITTER + String(startTime))
         str.append(SharedData.SPLITTER + String(endTime))
         str.append(SharedData.SPLITTER + getSwagSetCSV())
-        print(getSwagSetCSV())
         
         return str
     }
