@@ -31,6 +31,7 @@ class EditEntryController : UIViewController
         
         self.mapView.setRegion(region, animated: false)
         self.mapView.isScrollEnabled = true
+        self.mapView.isHidden = false
     }
     
     @IBAction func savePressed(_ sender: AnyObject)

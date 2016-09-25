@@ -45,6 +45,6 @@ class ViewEntryController: UIViewController
         
         self.mapView.setRegion(region, animated: false)
         self.mapView.addAnnotation(point)
-        self.mapView.isScrollEnabled = false
+        self.mapView.isScrollEnabled = true
     }
 }

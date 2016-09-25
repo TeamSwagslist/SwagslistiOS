@@ -116,8 +116,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IDm-3p-9Ft">
-                                <frame key="frameInset" minY="64" width="375" height="836"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IDm-3p-9Ft">
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Event Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0lR-0d-Jgt">
                                         <nil key="textColor"/>
@@ -171,9 +170,6 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Nca-uT-NSz">
-                                        <rect key="frame" x="0.0" y="528" width="375" height="244"/>
-                                    </mapView>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="RSe-PU-9Ok">
                                         <constraints>
                                             <constraint firstAttribute="height" constant="129" id="OA0-0v-f5W"/>
@@ -182,29 +178,34 @@
                                             <!--2016-09-25 04:21:26 +0000-->
                                         </date>
                                     </datePicker>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="8mY-CR-AqP">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="238" id="dPM-gb-vGa"/>
+                                        </constraints>
+                                    </mapView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="0lR-0d-Jgt" firstAttribute="centerX" secondItem="IDm-3p-9Ft" secondAttribute="centerX" id="0bc-Iy-YBi"/>
                                     <constraint firstItem="Wj0-J3-Vdo" firstAttribute="centerX" secondItem="IDm-3p-9Ft" secondAttribute="centerX" id="4OJ-ON-h91"/>
                                     <constraint firstItem="QkP-jd-cTV" firstAttribute="leading" secondItem="It6-eu-GNr" secondAttribute="trailing" constant="24" id="6Fh-Qo-VhK"/>
-                                    <constraint firstItem="Nca-uT-NSz" firstAttribute="top" secondItem="RSe-PU-9Ok" secondAttribute="bottom" constant="8" id="8uE-Gp-xW1"/>
                                     <constraint firstItem="cqY-5m-8Ao" firstAttribute="leading" secondItem="IDm-3p-9Ft" secondAttribute="leading" constant="29" id="9QY-Lv-Zvl"/>
+                                    <constraint firstItem="8mY-CR-AqP" firstAttribute="leading" secondItem="IDm-3p-9Ft" secondAttribute="leading" id="9th-d7-hjB"/>
                                     <constraint firstItem="Wj0-J3-Vdo" firstAttribute="top" secondItem="kUY-aK-unt" secondAttribute="bottom" constant="21" id="BMI-wj-e8e"/>
                                     <constraint firstItem="9dC-Rr-Ybz" firstAttribute="centerX" secondItem="IDm-3p-9Ft" secondAttribute="centerX" id="Cft-sR-64X"/>
                                     <constraint firstItem="Wj0-J3-Vdo" firstAttribute="leading" secondItem="IDm-3p-9Ft" secondAttribute="leading" constant="29" id="Dew-6w-hC6"/>
                                     <constraint firstItem="Sgw-hZ-ios" firstAttribute="leading" secondItem="IDm-3p-9Ft" secondAttribute="leading" constant="29" id="E3E-Pa-ruV"/>
                                     <constraint firstItem="RSe-PU-9Ok" firstAttribute="top" secondItem="9dC-Rr-Ybz" secondAttribute="bottom" constant="8" id="EuL-SG-He8"/>
-                                    <constraint firstItem="Nca-uT-NSz" firstAttribute="leading" secondItem="IDm-3p-9Ft" secondAttribute="leading" id="HJV-RC-Lnl"/>
+                                    <constraint firstItem="8mY-CR-AqP" firstAttribute="centerX" secondItem="RSe-PU-9Ok" secondAttribute="centerX" id="HOw-c7-YB9"/>
                                     <constraint firstItem="t60-8H-Z87" firstAttribute="top" secondItem="QkP-jd-cTV" secondAttribute="bottom" constant="18" id="IVS-4O-xbA"/>
-                                    <constraint firstAttribute="bottom" secondItem="Nca-uT-NSz" secondAttribute="bottom" id="IW3-TX-7Hv"/>
                                     <constraint firstItem="Sgw-hZ-ios" firstAttribute="centerX" secondItem="IDm-3p-9Ft" secondAttribute="centerX" id="IW4-qv-dWY"/>
                                     <constraint firstItem="lbi-jT-Z4c" firstAttribute="top" secondItem="0lR-0d-Jgt" secondAttribute="bottom" constant="8" id="IyV-5d-47N"/>
                                     <constraint firstItem="QkP-jd-cTV" firstAttribute="top" secondItem="tzk-lU-NSC" secondAttribute="bottom" constant="18" id="Mbg-rh-axZ"/>
                                     <constraint firstItem="It6-eu-GNr" firstAttribute="leading" secondItem="IDm-3p-9Ft" secondAttribute="leading" constant="29" id="NAf-bK-3H9"/>
+                                    <constraint firstAttribute="bottom" secondItem="8mY-CR-AqP" secondAttribute="bottom" id="OBd-Pv-Qmg"/>
                                     <constraint firstItem="It6-eu-GNr" firstAttribute="top" secondItem="cqY-5m-8Ao" secondAttribute="bottom" constant="8" id="PuE-tC-bC7"/>
                                     <constraint firstItem="RSe-PU-9Ok" firstAttribute="leading" secondItem="IDm-3p-9Ft" secondAttribute="leading" constant="29" id="RSG-E5-rdz"/>
                                     <constraint firstItem="lbi-jT-Z4c" firstAttribute="centerX" secondItem="IDm-3p-9Ft" secondAttribute="centerX" id="UKB-9i-sfY"/>
-                                    <constraint firstAttribute="trailing" secondItem="Nca-uT-NSz" secondAttribute="trailing" id="VVC-P8-U3p"/>
+                                    <constraint firstAttribute="trailing" secondItem="8mY-CR-AqP" secondAttribute="trailing" id="UXy-Hc-C3o"/>
                                     <constraint firstItem="Sgw-hZ-ios" firstAttribute="top" secondItem="IDm-3p-9Ft" secondAttribute="top" constant="-50" id="a1T-Vk-bQ0"/>
                                     <constraint firstItem="US8-6h-BQI" firstAttribute="top" secondItem="lbi-jT-Z4c" secondAttribute="bottom" constant="8" id="apx-fs-QHN"/>
                                     <constraint firstItem="tzk-lU-NSC" firstAttribute="top" secondItem="US8-6h-BQI" secondAttribute="bottom" constant="22" id="aw7-qD-79p"/>
@@ -221,6 +222,7 @@
                                     <constraint firstItem="tzk-lU-NSC" firstAttribute="leading" secondItem="cqY-5m-8Ao" secondAttribute="trailing" constant="24" id="rAB-wW-nlh"/>
                                     <constraint firstItem="0lR-0d-Jgt" firstAttribute="top" secondItem="Sgw-hZ-ios" secondAttribute="bottom" constant="8" id="sc3-gt-iPp"/>
                                     <constraint firstItem="kUY-aK-unt" firstAttribute="top" secondItem="It6-eu-GNr" secondAttribute="bottom" constant="8" id="vkY-5c-Lcg"/>
+                                    <constraint firstItem="8mY-CR-AqP" firstAttribute="top" secondItem="RSe-PU-9Ok" secondAttribute="bottom" constant="8" symbolic="YES" id="wm7-9M-Ok9"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="size" keyPath="contentSize">
@@ -256,7 +258,7 @@
                         <outlet property="descriptionField" destination="US8-6h-BQI" id="dVP-Wx-MPz"/>
                         <outlet property="eventNameField" destination="0lR-0d-Jgt" id="TQs-iR-1Gz"/>
                         <outlet property="foodSwitch" destination="It6-eu-GNr" id="W4X-GY-TOI"/>
-                        <outlet property="mapView" destination="Nca-uT-NSz" id="2a6-8k-UTn"/>
+                        <outlet property="mapView" destination="8mY-CR-AqP" id="fhS-LH-vc9"/>
                         <outlet property="premiumControl" destination="Wj0-J3-Vdo" id="cPH-rs-gWF"/>
                         <outlet property="timePicker" destination="RSe-PU-9Ok" id="FEE-TM-u7h"/>
                         <outlet property="trinketsSwitch" destination="kUY-aK-unt" id="Wb2-Mo-JBB"/>
@@ -264,7 +266,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lu8-N2-IO9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2355.5" y="-892"/>
+            <point key="canvasLocation" x="2354.4000000000001" y="-892.3538230884559"/>
         </scene>
         <!--Map Controller-->
         <scene sceneID="Ops-ll-qDM">
@@ -285,18 +287,13 @@
                                     <constraint firstAttribute="width" secondItem="p8U-OW-8cW" secondAttribute="height" multiplier="15:11" id="qYK-Ic-c3I"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EventCell" rowHeight="55" id="vuN-og-ClR" customClass="EntryCell" customModule="Swagslist" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="55"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EventCell" rowHeight="56" id="vuN-og-ClR" customClass="EntryCell" customModule="Swagslist" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="56"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vuN-og-ClR" id="PvJ-1W-KAZ">
-                                            <frame key="frameInset" width="375" height="54"/>
+                                            <frame key="frameInset" width="375" height="55"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CY7-Bf-Pmx">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.0 miles" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IB8-pk-frc">
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="140" id="0yx-ZN-Vax"/>
@@ -335,21 +332,27 @@
                                                         <constraint firstAttribute="height" constant="18" id="tSw-Nb-r7E"/>
                                                     </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CY7-Bf-Pmx">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="IB8-pk-frc" secondAttribute="bottom" constant="2" id="2Qk-yF-HvU"/>
+                                                <constraint firstItem="zEQ-6y-POO" firstAttribute="top" secondItem="PvJ-1W-KAZ" secondAttribute="topMargin" id="Oog-aP-xoa"/>
                                                 <constraint firstItem="lyH-DR-gOK" firstAttribute="centerX" secondItem="PvJ-1W-KAZ" secondAttribute="centerX" id="UBp-m0-5Pg"/>
                                                 <constraint firstItem="6w1-VJ-Ro8" firstAttribute="leading" secondItem="lyH-DR-gOK" secondAttribute="trailing" constant="5" id="UWh-1z-LU2"/>
                                                 <constraint firstAttribute="bottom" secondItem="LK1-9Z-7mV" secondAttribute="bottom" constant="4" id="WJ0-Vx-oJd"/>
                                                 <constraint firstAttribute="trailing" secondItem="IB8-pk-frc" secondAttribute="trailing" constant="8" id="WlW-rJ-uUZ"/>
-                                                <constraint firstItem="CY7-Bf-Pmx" firstAttribute="leading" secondItem="PvJ-1W-KAZ" secondAttribute="leadingMargin" id="YGy-nf-cll"/>
+                                                <constraint firstItem="LK1-9Z-7mV" firstAttribute="top" secondItem="CY7-Bf-Pmx" secondAttribute="bottom" constant="3.5" id="aDF-Mx-UGn"/>
                                                 <constraint firstItem="lyH-DR-gOK" firstAttribute="leading" secondItem="LK1-9Z-7mV" secondAttribute="trailing" constant="5" id="bUd-kP-0c8"/>
                                                 <constraint firstItem="CY7-Bf-Pmx" firstAttribute="top" secondItem="PvJ-1W-KAZ" secondAttribute="top" constant="4" id="bVX-o1-8DD"/>
                                                 <constraint firstAttribute="bottom" secondItem="lyH-DR-gOK" secondAttribute="bottom" constant="4" id="ey7-cF-Tgj"/>
                                                 <constraint firstAttribute="bottom" secondItem="6w1-VJ-Ro8" secondAttribute="bottom" constant="4" id="sSE-m3-L5I"/>
-                                                <constraint firstItem="zEQ-6y-POO" firstAttribute="top" secondItem="PvJ-1W-KAZ" secondAttribute="top" id="sXI-py-bp4"/>
                                                 <constraint firstItem="zEQ-6y-POO" firstAttribute="leading" secondItem="CY7-Bf-Pmx" secondAttribute="trailing" constant="8" id="uwe-Ma-zsh"/>
                                                 <constraint firstAttribute="trailing" secondItem="zEQ-6y-POO" secondAttribute="trailing" constant="8" id="wCA-WG-6A9"/>
+                                                <constraint firstItem="CY7-Bf-Pmx" firstAttribute="leading" secondItem="PvJ-1W-KAZ" secondAttribute="leading" constant="14" id="y9u-uM-hdT"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -419,7 +422,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="141" id="7cC-qH-MvY"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food.png" translatesAutoresizingMaskIntoConstraints="NO" id="G26-hm-IbW">

@@ -114,7 +114,6 @@ class NetHandler
             
             for i in 0..<amount
             {
-                print(split[i+2])
                 let entry = EventEntry.createFromCSV(data: Utilities.split(s: split[i+2], separator: SharedData.SPLITTER), start: 0)
                 
                 if entry != nil

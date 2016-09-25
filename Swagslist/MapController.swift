@@ -32,7 +32,7 @@ class MapController : UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
-        return 55
+        return 56
     }
     
     func numberOfSections(in tableView: UITableView) -> Int
@@ -49,9 +49,13 @@ class MapController : UIViewController, UITableViewDelegate, UITableViewDataSour
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "EventCell") as! EntryCell
         let entry = SharedData.eventList[indexPath.row]
+        let date = Date(timeIntervalSince1970: Double(Double(entry.endTime)/1000))
+        let formatter = DateFormatter()
+        formatter.dateStyle = .none
+        formatter.timeStyle = .short
         
         cell.nameLabel.text = entry.name
-        cell.distanceLabel.isHidden = true
+        cell.distanceLabel.text = "Ends " + formatter.string(from: date)
         cell.apparelIcon.isHidden = !entry.swagSet.contains("APPAREL")
         cell.foodIcon.isHidden = !entry.swagSet.contains("FOOD")
         cell.trinketsIcon.isHidden = !entry.swagSet.contains("TRINKETS")
