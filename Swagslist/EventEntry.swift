@@ -56,6 +56,7 @@ class EventEntry
         str.append(SharedData.SPLITTER + String(startTime))
         str.append(SharedData.SPLITTER + String(endTime))
         str.append(SharedData.SPLITTER + getSwagSetCSV())
+        print(getSwagSetCSV())
         
         return str
     }
@@ -63,6 +64,11 @@ class EventEntry
     func getSwagSetCSV() -> String
     {
         var ret = ""
+        
+        if swagSet.count == 0
+        {
+            ret = "null"
+        }
         
         for i in 0..<swagSet.count
         {
@@ -74,6 +80,14 @@ class EventEntry
     
     func parseSwagSetCSV(csv: String)
     {
-        swagSet = Utilities.split(s: csv, separator: SharedData.SPLITTER_2)
+        let array = Utilities.split(s: csv, separator: SharedData.SPLITTER_2)
+        
+        for s in array
+        {
+            if s != "null"
+            {
+                swagSet.append(s)
+            }
+        }
     }
 }

@@ -32,7 +32,7 @@ class MapController : UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
-        return 44
+        return 55
     }
     
     func numberOfSections(in tableView: UITableView) -> Int
@@ -55,6 +55,7 @@ class MapController : UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.apparelIcon.isHidden = !entry.swagSet.contains("APPAREL")
         cell.foodIcon.isHidden = !entry.swagSet.contains("FOOD")
         cell.trinketsIcon.isHidden = !entry.swagSet.contains("TRINKETS")
+        cell.promotedIcon.isHidden = !entry.premium
         
         return cell
     }
@@ -79,21 +80,25 @@ class MapController : UIViewController, UITableViewDelegate, UITableViewDataSour
         {
             DispatchQueue.global(qos: .background).async {
                 Operations.refreshing = true
-                SharedData.eventList = NetHandler.getEvents()
-                self.tableView.reloadData()
-                Operations.refreshing = false
-                self.mapView.removeAnnotations(self.mapView.annotations)
+                let list = NetHandler.getEvents()
                 
-                for entry in SharedData.eventList
-                {
-                    let coords = CLLocationCoordinate2D(latitude: entry.latitude, longitude: entry.longitude)
+                DispatchQueue.main.async {
+                    SharedData.eventList = list
+                    self.tableView.reloadData()
+                    Operations.refreshing = false
+                    self.mapView.removeAnnotations(self.mapView.annotations)
                     
-                    let point = MKPointAnnotation()
-                    
-                    point.coordinate = coords
-                    point.title = entry.name
-                    
-                    self.mapView.addAnnotation(point)
+                    for entry in SharedData.eventList
+                    {
+                        let coords = CLLocationCoordinate2D(latitude: entry.latitude, longitude: entry.longitude)
+                        
+                        let point = MKPointAnnotation()
+                        
+                        point.coordinate = coords
+                        point.title = entry.name
+                        
+                        self.mapView.addAnnotation(point)
+                    }
                 }
             }
         }

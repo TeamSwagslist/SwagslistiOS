@@ -22,6 +22,17 @@ class EditEntryController : UIViewController
     @IBOutlet weak var timePicker: UIDatePicker!
     @IBOutlet weak var mapView: MKMapView!
     
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        
+        let coords = CLLocationCoordinate2D(latitude: 33.77586305, longitude: -84.39651936)
+        let region = MKCoordinateRegionMake(coords, MKCoordinateSpanMake(self.mapView.region.span.longitudeDelta/8192, self.mapView.region.span.latitudeDelta/8192))
+        
+        self.mapView.setRegion(region, animated: false)
+        self.mapView.isScrollEnabled = true
+    }
+    
     @IBAction func savePressed(_ sender: AnyObject)
     {
         let eventEntry = EventEntry()

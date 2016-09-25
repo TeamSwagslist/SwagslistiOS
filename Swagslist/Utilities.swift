@@ -100,17 +100,7 @@ class Utilities
             return [trim(s: s)]
         }
         
-        var split = trim(s: s).components(separatedBy: separator)
-        
-        for i in 0 ..< split.count
-        {
-            if split[i] == ""
-            {
-                split.remove(at: i)
-            }
-        }
-        
-        return split
+        return trim(s: s).components(separatedBy: separator)
     }
     
     class func readBool(s:String) -> Bool
