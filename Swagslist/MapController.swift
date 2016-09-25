@@ -71,6 +71,7 @@ class MapController : UIViewController, UITableViewDelegate, UITableViewDataSour
         
         destController.eventEntry = SharedData.eventList[indexPath.row]
         self.navigationController!.pushViewController(destController, animated: true)
+        tableView.cellForRow(at: indexPath)!.setSelected(false, animated: true)
     }
     
     @IBAction func onRefresh(_ sender: AnyObject)
