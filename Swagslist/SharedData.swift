@@ -11,11 +11,12 @@ import Foundation
 struct SharedData
 {
     static var IP:String = "104.236.13.142"
-    static var PORT:Int = 29000
+    static var PORT:Int = 29421
 
     static let SPLITTER:String = "|SPLIT|"
     static let SPLITTER_2:String = "&SPLIT&"
     static let NEWLINE:String = "|NL|"
     
     static var sessionUsername:String!
+    static var eventList:[EventEntry] = [EventEntry]()
 }

@@ -28,6 +28,7 @@
 		11155E981D97764A00C60115 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11155E971D97764A00C60115 /* MapController.swift */; };
 		11155E9A1D97778900C60115 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11155E991D97778900C60115 /* RegisterController.swift */; };
 		11155E9C1D977C6000C60115 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11155E9B1D977C6000C60115 /* LoginController.swift */; };
+		11155E9E1D978FCE00C60115 /* EditEntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11155E9D1D978FCE00C60115 /* EditEntryController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		11155E971D97764A00C60115 /* MapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
 		11155E991D97778900C60115 /* RegisterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		11155E9B1D977C6000C60115 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		11155E9D1D978FCE00C60115 /* EditEntryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditEntryController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 				11155E971D97764A00C60115 /* MapController.swift */,
 				11155E991D97778900C60115 /* RegisterController.swift */,
 				11155E9B1D977C6000C60115 /* LoginController.swift */,
+				11155E9D1D978FCE00C60115 /* EditEntryController.swift */,
 			);
 			path = Swagslist;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11155E9E1D978FCE00C60115 /* EditEntryController.swift in Sources */,
 				11155E901D9749AB00C60115 /* Utilities.swift in Sources */,
 				11155E9C1D977C6000C60115 /* LoginController.swift in Sources */,
 				11155E9A1D97778900C60115 /* RegisterController.swift in Sources */,

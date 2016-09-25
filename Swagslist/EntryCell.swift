@@ -17,17 +17,4 @@ class EntryCell:UITableViewCell
     @IBOutlet weak var apparelIcon: UIImageView!
     @IBOutlet weak var foodIcon: UIImageView!
     @IBOutlet weak var trinketsIcon: UIImageView!
-    
-    var controller:MapController?
-    
-    override func setSelected(selected: Bool, animated: Bool)
-    {
-        super.setSelected(selected, animated: animated)
-        
-        if controller != nil && selected
-        {
-            controller!.navigationController!.popViewControllerAnimated(true)
-            controller!.newController!.setList(list!)
-        }
-    }
 }

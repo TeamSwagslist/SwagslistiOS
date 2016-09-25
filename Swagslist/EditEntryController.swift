@@ -1,0 +1,60 @@
+//
+//  EditEntryController.swift
+//  Swagslist
+//
+//  Created by Aidan Brady on 9/25/16.
+//  Copyright © 2016 Aidan Brady. All rights reserved.
+//
+
+import UIKit
+import MapKit
+
+class EditEntryController : UIViewController
+{
+    let isNew = true
+    
+    @IBOutlet weak var eventNameField: UITextField!
+    @IBOutlet weak var descriptionField: UITextView!
+    @IBOutlet weak var apparelSwitch: UISwitch!
+    @IBOutlet weak var foodSwitch: UISwitch!
+    @IBOutlet weak var trinketsSwitch: UISwitch!
+    @IBOutlet weak var timePicker: UIDatePicker!
+    @IBOutlet weak var mapView: MKMapView!
+    
+    @IBAction func savePressed(_ sender: AnyObject)
+    {
+        let eventEntry = EventEntry()
+        eventEntry.name = eventNameField.text
+        eventEntry.description = descriptionField.text
+        
+        if apparelSwitch.isOn
+        {
+            eventEntry.swagSet.append("APPAREL")
+        }
+        if foodSwitch.isOn
+        {
+            eventEntry.swagSet.append("FOOD")
+        }
+        if trinketsSwitch.isOn
+        {
+            eventEntry.swagSet.append("TRINKETS")
+        }
+        
+        let response = NetHandler.addEvent(entry: eventEntry)
+        
+        if response.getAccept()
+        {
+            self.navigationController!.popViewController(animated: true)
+            (self.navigationController!.topViewController as! MapController).doRefresh()
+        }
+        else {
+            let alertMsg = response.message != nil ? response.message! : "Unable to connect."
+            Utilities.displayAlert(controller: self, title: "Couldn't add event", msg: alertMsg, action: nil)
+        }
+    }
+    
+    @IBAction func cancelPressed(_ sender: AnyObject)
+    {
+        self.navigationController!.popViewController(animated: true)
+    }
+}

@@ -118,21 +118,21 @@ class NetHandler
         {
             if response.count > 1
             {
-                let amount = Int(response[0].split(SharedData.SPLITTER)[1])
+                let amount = Int(Utilities.split(s: response[0], separator: SharedData.SPLITTER)[1])!
                 
                 for i in 0..<amount
                 {
-                    let entry = EventEntry.createFromCSV(response.get(i+1).split(SharedData.SPLITTER), 0)
+                    let entry = EventEntry.createFromCSV(data: Utilities.split(s: response[i+1], separator: SharedData.SPLITTER), start: 0)
                     
-                    if entry != null
+                    if entry != nil
                     {
-                        ret.append(entry)
+                        entrySet.append(entry!)
                     }
                 }
             }
         }
         
-        return ret
+        return entrySet
     }
     
     class func login(username:String, password:String) -> Response

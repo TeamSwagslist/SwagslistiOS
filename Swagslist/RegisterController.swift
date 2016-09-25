@@ -80,7 +80,7 @@ class RegisterController: UIViewController, UITextFieldDelegate
         
         registerSpinner.startAnimating()
         
-        DispatchQueue.global(qos: .background).async(execute: {
+        DispatchQueue.global(qos: .background).async {
             Operations.registering = true
             
             let response = NetHandler.register(username: username, password:password)
@@ -100,6 +100,6 @@ class RegisterController: UIViewController, UITextFieldDelegate
                     Utilities.displayAlert(controller: self, title: "Couldn't register", msg: alertMsg, action: nil)
                 }
             }
-        })
+        }
     }
 }
