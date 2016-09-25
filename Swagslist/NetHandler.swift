@@ -49,7 +49,7 @@ class NetHandler
         return nil
     }
     
-    class func sendDataMultiline(str:String) -> [String]?
+    class func sendDataMultiline(str:String, retLines:Int) -> [String]?
     {
         var input:InputStream?
         var output:OutputStream?
@@ -69,12 +69,11 @@ class NetHandler
         
         inputStream.open()
         
-        while true
+        while ret.count < retLines
         {
             var buffer = [UInt8](repeating:0, count:1048576)
             var bytes = inputStream.read(&buffer, maxLength: 1024)
             let data = NSMutableData(bytes: &buffer, length: bytes)
-            var added = false
             
             while inputStream.hasBytesAvailable
             {
@@ -90,13 +89,7 @@ class NetHandler
                 for s in split
                 {
                     ret.append(s)
-                    added = true
                 }
-            }
-            
-            if !added
-            {
-                break
             }
         }
         
@@ -114,20 +107,19 @@ class NetHandler
     {
         var entrySet = [EventEntry]()
 
-        if let response = sendDataMultiline(str: "LISTENTRIES")
+        if let response = sendData(str: "LISTENTRIES")
         {
-            if response.count > 1
+            let split = Utilities.split(s: response, separator: SharedData.PRIME_SPLITTER)
+            let amount = Int(split[1])!
+            
+            for i in 0..<amount
             {
-                let amount = Int(Utilities.split(s: response[0], separator: SharedData.SPLITTER)[1])!
+                print(split[i+2])
+                let entry = EventEntry.createFromCSV(data: Utilities.split(s: split[i+2], separator: SharedData.SPLITTER), start: 0)
                 
-                for i in 0..<amount
+                if entry != nil
                 {
-                    let entry = EventEntry.createFromCSV(data: Utilities.split(s: response[i+1], separator: SharedData.SPLITTER), start: 0)
-                    
-                    if entry != nil
-                    {
-                        entrySet.append(entry!)
-                    }
+                    entrySet.append(entry!)
                 }
             }
         }

@@ -80,6 +80,7 @@ class MapController : UIViewController, UITableViewDelegate, UITableViewDataSour
             DispatchQueue.global(qos: .background).async {
                 Operations.refreshing = true
                 SharedData.eventList = NetHandler.getEvents()
+                self.tableView.reloadData()
                 Operations.refreshing = false
                 self.mapView.removeAnnotations(self.mapView.annotations)
                 

@@ -27,7 +27,7 @@ class EventEntry
     {
         let entry = EventEntry()
         
-        if data.count-start != 6
+        if data.count-start != 9
         {
             return nil
         }
